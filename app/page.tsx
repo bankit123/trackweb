@@ -78,29 +78,47 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-hero-gradient text-slate-900">
       <header className="section-shell relative overflow-hidden py-10 md:py-16">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
-              <Image
-                src={assets.logo}
-                alt="TrackMySpend logo"
-                width={80}
-                height={80}
-                className="h-full w-full object-cover"
-                priority
-              />
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
+                <Image
+                  src={assets.logo}
+                  alt="TrackMySpend logo"
+                  width={80}
+                  height={80}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
+              <div className="text-xl font-semibold text-slate-900">
+                TrackMySpend
+              </div>
             </div>
-            <div className="text-xl font-semibold text-slate-900">
-              TrackMySpend
+            <div className="hidden items-center gap-3 sm:flex">
+              <nav className="flex items-center gap-4 text-sm font-medium text-slate-600">
+                <a href="#about" className="hover:text-brand-700">
+                  About
+                </a>
+                <a href="#why" className="hover:text-brand-700">
+                  Why us
+                </a>
+                <a href="#testimonials" className="hover:text-brand-700">
+                  Testimonials
+                </a>
+                <a href="#contact" className="hover:text-brand-700">
+                  Contact
+                </a>
+              </nav>
+              <a
+                href="https://play.google.com/store/apps/details?id=trackmyspend.budgetplanner.expensemanager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-4 py-2 text-sm font-semibold text-white shadow-soft"
+              >
+                Download
+              </a>
             </div>
-          </div>
-          <div className="hidden items-center gap-3 sm:flex">
-            <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-brand-700 hover:border-brand-200 hover:text-brand-800">
-              Contact
-            </button>
-            <button className="rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-4 py-2 text-sm font-semibold text-white shadow-soft">
-              Download app
-            </button>
           </div>
         </div>
 
@@ -155,13 +173,12 @@ export default function Home() {
           </div>
           <div className="relative flex-1">
             <div className="relative overflow-hidden rounded-3xl shadow-soft">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(94,129,255,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.08),transparent_25%)]" />
               <Image
                 src={assets.hero}
                 alt="TrackMySpend hero"
-                width={1100}
+                width={1200}
                 height={700}
-                className="relative h-auto w-full object-cover"
+                className="h-[70vh] w-full object-cover"
                 priority
               />
             </div>
@@ -169,7 +186,10 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="section-shell grid items-center gap-10 rounded-[32px] border border-slate-200 bg-white px-6 py-12 shadow-soft md:grid-cols-2 md:px-10">
+      <section
+        id="about"
+        className="section-shell grid items-center gap-10 rounded-[32px] border border-slate-200 bg-white px-6 py-12 shadow-soft md:grid-cols-2 md:px-10"
+      >
         <div className="space-y-4">
           <span className="accent-pill">About the app</span>
           <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
@@ -259,7 +279,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell py-16 md:py-20">
+      <section id="why" className="section-shell py-16 md:py-20">
         <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="accent-pill">Why choose us</span>
@@ -289,7 +309,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell py-16 md:py-20">
+      <section
+        id="testimonials"
+        className="section-shell py-16 md:py-20"
+      >
         <div className="mb-6 flex items-center gap-3">
           <span className="accent-pill">Testimonials</span>
           <div className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
@@ -345,7 +368,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mt-12 bg-slate-50 py-12">
+      <footer id="contact" className="mt-12 bg-slate-50 py-12">
         <div className="section-shell grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2 space-y-4">
             <div className="text-xl font-semibold text-slate-900">TrackMySpend</div>
