@@ -1,5 +1,15 @@
 "use client";
 
+import Image from "next/image";
+
+const assets = {
+  logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO3FzMvPTqFW1lJ4Z0A4nXdS6NP_H2bj3DgM4nwAN2PBY4QjTVihO1rmg-KhfqiOKWrM8afQ_2fo7qwc_0Y6Rj0M22Sig_Sc0TjVDsdzv52hKN_LFxYc5WK9M33039cJ8q7p9hBAKsMpDIjLhR0i1c1vsTf8Un-oZNAOlQ_TPzYaU8-Gm4Wjqf0bTYUs0U/s320/Logo.jpg",
+  hero:
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYU8pETkVKueZJjan5WQYVQFqm140g6w4eyUaQ5xpwvk5CdKO8AShNA1mPIqU0cVv_ayBitvRpfKrK5wKBWam1w_xY-YmYOBoZaj8IWa4FWN2NHDdD1lJR4qH1exBc50M1GXihK4jxOC_k_ZOyukaQ9NDq0PH_AWyOxsxfM1SeJJDJjJaxxuw9Clgc7CbQ/s16000/heroimg.png",
+  screen:
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6eg5kTJNS3rgTRnDk0jPS3XnfPqNgJzMWofqKaEAQVEQos996A_KA9gNZbwAThxbxvktYbKpB7A5B8oXahVfO6HWWx1VvScknyuNqgiL8AEnNBU1PUPzRAevtBw2iS7Mc8B1Lh6GK7gY7Q_h99vyuCg-zbXWnBTjF1Xc-Os8XqtvszqhoRf5EzRxQ1GHq/s16000/Group%201000003243.png",
+};
+
 const highlights = [
   { label: "App Rating", value: "4.8", suffix: "/5" },
   { label: "Total downloads", value: "1.5m+", suffix: "" },
@@ -68,9 +78,34 @@ const footerLinks = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-hero-gradient text-slate-900">
-      <header className="section-shell relative overflow-hidden py-16 md:py-24">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_40%_10%,rgba(63,99,241,0.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.12),transparent_25%)]" />
-        <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
+      <header className="section-shell relative overflow-hidden py-10 md:py-16">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
+              <Image
+                src={assets.logo}
+                alt="TrackMySpend logo"
+                width={80}
+                height={80}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
+            <div className="text-xl font-semibold text-slate-900">
+              TrackMySpend
+            </div>
+          </div>
+          <div className="hidden items-center gap-3 sm:flex">
+            <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-brand-700 hover:border-brand-200 hover:text-brand-800">
+              Contact
+            </button>
+            <button className="rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-4 py-2 text-sm font-semibold text-white shadow-soft">
+              Download app
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-12 grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="flex-1">
             <span className="accent-pill">Smart. Simple. Seamless.</span>
             <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
@@ -110,30 +145,17 @@ export default function Home() {
             </div>
           </div>
           <div className="relative flex-1">
-            <div className="glass-card relative overflow-hidden rounded-3xl bg-gradient-to-b from-white to-white p-6 shadow-soft">
+            <div className="glass-card relative overflow-hidden rounded-3xl bg-white shadow-soft">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(94,129,255,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.08),transparent_25%)]" />
-              <div className="relative space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
-                <div className="flex items-center justify-between text-sm text-slate-500">
-                  <span>Monthly overview</span>
-                  <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs text-green-600">
-                    +8.2%
-                  </span>
-                </div>
-                <div className="h-48 rounded-xl bg-[linear-gradient(120deg,rgba(63,99,241,0.35),rgba(14,165,233,0.3))] shadow-inner" />
-                <div className="grid grid-cols-2 gap-3">
-                  {["Budgets", "Alerts", "Reports", "Insights"].map((chip) => (
-                    <div
-                      key={chip}
-                      className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800"
-                    >
-                      {chip}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-slate-600">
-                  Built for seamless connectivity and comfort—perfect for daily
-                  check-ins or deep dives on demand.
-                </p>
+              <div className="relative rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
+                <Image
+                  src={assets.hero}
+                  alt="TrackMySpend hero"
+                  width={1100}
+                  height={700}
+                  className="h-auto w-full rounded-2xl border border-slate-200 object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -197,6 +219,35 @@ export default function Home() {
                 works.
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell grid items-center gap-10 rounded-[32px] border border-slate-200 bg-white px-6 py-12 shadow-soft md:grid-cols-2 md:px-10">
+        <div className="order-2 space-y-4 md:order-1">
+          <span className="accent-pill">Product preview</span>
+          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+            See your money at a glance
+          </h2>
+          <p className="text-lg text-slate-600">
+            Track every transaction, category, and trend without digging. The
+            home screen keeps the essentials up front so you can decide faster.
+          </p>
+          <ul className="space-y-2 text-slate-600">
+            <li>• Live balances by wallet and card</li>
+            <li>• Smart alerts for limits and unusual spend</li>
+            <li>• Exports that drop into your favorite tools</li>
+          </ul>
+        </div>
+        <div className="order-1 md:order-2">
+          <div className="glass-card overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+            <Image
+              src={assets.screen}
+              alt="TrackMySpend app home screen"
+              width={1100}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
           </div>
         </div>
       </section>
