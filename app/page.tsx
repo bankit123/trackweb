@@ -12,7 +12,7 @@ const assets = {
 
 const highlights = [
   { label: "User rating", value: "4.8", suffix: "/5" },
-  { label: "Total downloads", value: "1.5m+", suffix: "" },
+  { label: "Total downloads", value: "5k+", suffix: "" },
 ];
 
 const pillars = [
@@ -77,9 +77,9 @@ const footerLinks = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-hero-gradient text-slate-900">
-      <header className="section-shell relative overflow-hidden py-10 md:py-16">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center justify-between gap-4">
+      <header className="relative overflow-hidden pb-12 md:pb-16">
+        <div className="w-full border border-white/60 bg-white/70 px-4 md:px-8 py-3 shadow-soft backdrop-blur-xl">
+          <div className="flex w-full items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 overflow-hidden rounded-full border border-slate-200 bg-white">
                 <Image
@@ -97,9 +97,6 @@ export default function Home() {
             </div>
             <div className="hidden items-center gap-3 sm:flex">
               <nav className="flex items-center gap-4 text-sm font-medium text-slate-600">
-                <a href="#about" className="hover:text-brand-700">
-                  About
-                </a>
                 <a href="#why" className="hover:text-brand-700">
                   Why us
                 </a>
@@ -122,7 +119,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-12 grid items-center gap-12 md:grid-cols-2 md:gap-16">
+        <div className="section-shell mt-10 grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="flex-1">
             <span className="accent-pill">Smart. Simple. Seamless.</span>
             <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
@@ -138,26 +135,25 @@ export default function Home() {
                 href="https://play.google.com/store/apps/details?id=trackmyspend.budgetplanner.expensemanager"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:translate-y-[-2px]"
+                className="inline-flex items-center"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  className="h-5 w-5"
-                  fill="currentColor"
-                >
-                  <path d="M325.3 234.3 104.8 12.3c-5.9 4.3-9.7 11.1-9.7 18.9v449.8c0 7.8 3.8 14.6 9.7 18.9l220.5-222zM364.4 273.4l-44.6-44.6-32.7 32.7 32.7 32.7zM399.6 238.2l-26.1 15.2 26.1 15.2 56.6 32.9c5.3-4.7 8.8-11.5 8.8-19.2v-58.6c0-7.7-3.4-14.5-8.8-19.2zM122.7 9.8 343 230.1l32.8-32.8-239-138.9c-4.9-2.8-9.8-4.1-14.1-4.1zM343 281.9 122.7 502.2c4.3 0 9.2-1.3 14.1-4.1l239-138.9z" />
-                </svg>
-                Get it on Play Store
+                <Image
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcEodm368HNvTfg9m6RG8_yjYDnGggZ4Aeobh1It8-R5YO4yO9NCG53JVpprfSAq9U5h11ZPIJL2DEP3LNhfgV3Apf0JsnN1wYh9fm273AQ0HeRcvdJ3QxoH-HGtCvOfvLYIrDl1fLJFG6i-VEhLyihemctE0w3ewYmZ6mo7hnX_FAZvloE2qTcVUxK6oC/s320/Google_Play_Store_badge_EN.svg.png"
+                  alt="Get it on Google Play"
+                  width={180}
+                  height={54}
+                  className="h-14 w-auto"
+                  priority
+                />
               </a>
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {highlights.map((item) => (
                 <div
                   key={item.label}
-                  className="glass-card rounded-2xl px-4 py-5"
+                  className="glass-card rounded-2xl px-4 py-5 border-b border-slate-200 pb-2"
                 >
-                  <div className="text-3xl font-semibold text-slate-900">
+                  <div className="text-3xl font-semibold text-slate-900 ">
                     {item.value}
                     <span className="text-lg text-slate-500">
                       {" "}
@@ -172,112 +168,19 @@ export default function Home() {
             </div>
           </div>
           <div className="relative flex-1">
-            <div className="relative overflow-hidden rounded-3xl shadow-soft">
+            <div className="relative overflow-hidden rounded-3xl">
               <Image
                 src={assets.hero}
                 alt="TrackMySpend hero"
                 width={1200}
                 height={700}
-                className="h-[70vh] w-full object-cover"
+                className="mx-auto w-full max-h-[100vh] object-contain"
                 priority
               />
             </div>
           </div>
         </div>
       </header>
-
-      <section
-        id="about"
-        className="section-shell grid items-center gap-10 rounded-[32px] border border-slate-200 bg-white px-6 py-12 shadow-soft md:grid-cols-2 md:px-10"
-      >
-        <div className="space-y-4">
-          <span className="accent-pill">About the app</span>
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
-            Simplifying money through smart app innovations
-          </h2>
-          <p className="text-lg text-slate-600">
-            We make money management effortless. TrackMySpend blends intuitive
-            design with powerful automation so you can focus on decisions—not
-            spreadsheets.
-          </p>
-          <div className="grid grid-cols-2 gap-3 text-sm text-slate-700">
-            {pillars.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4"
-              >
-                <h3 className="font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-slate-600">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-            <div className="rounded-full bg-green-500/10 px-4 py-2 text-green-700">
-              Cutting-edge technology
-            </div>
-            <div className="rounded-full bg-blue-500/10 px-4 py-2 text-blue-700">
-              24/7 support
-            </div>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="absolute inset-0 -z-10 blur-3xl" />
-          <div className="glass-card h-full rounded-3xl p-6">
-            <div className="mb-6 flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-500">Trusted by thousands</p>
-                <p className="text-3xl font-bold text-slate-900">2500+</p>
-              </div>
-              <div className="rounded-full bg-brand-100 px-4 py-2 text-sm text-brand-700">
-                99.9% uptime
-              </div>
-            </div>
-            <div className="space-y-4 text-slate-600">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                Smart notifications keep you ahead with personalized alerts and
-                reminders.
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                Customizable settings adapt to your preferences and spending
-                style.
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                API and integration support so reports land where your team
-                works.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-shell grid items-center gap-10 rounded-[32px] border border-slate-200 bg-white px-6 py-12 shadow-soft md:grid-cols-2 md:px-10">
-        <div className="order-2 space-y-4 md:order-1">
-          <span className="accent-pill">Product preview</span>
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
-            See your money at a glance
-          </h2>
-          <p className="text-lg text-slate-600">
-            Track every transaction, category, and trend without digging. The
-            home screen keeps the essentials up front so you can decide faster.
-          </p>
-          <ul className="space-y-2 text-slate-600">
-            <li>• Live balances by wallet and card</li>
-            <li>• Smart alerts for limits and unusual spend</li>
-            <li>• Exports that drop into your favorite tools</li>
-          </ul>
-        </div>
-        <div className="order-1 md:order-2">
-          <div className="glass-card overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
-            <Image
-              src={assets.screen}
-              alt="TrackMySpend app home screen"
-              width={1100}
-              height={900}
-              className="h-auto w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
       <section id="why" className="section-shell py-16 md:py-20">
         <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
@@ -334,7 +237,7 @@ export default function Home() {
             <div className="mt-6 grid grid-cols-3 gap-4 text-center">
               {[
                 { label: "User rating", value: "4.8" },
-                { label: "Installs", value: "1.5m" },
+                { label: "Installs", value: "5000+" },
                 { label: "Countries", value: "40+" },
               ].map((stat) => (
                 <div
@@ -369,49 +272,48 @@ export default function Home() {
       </section>
 
       <footer id="contact" className="mt-12 bg-slate-50 py-12">
-        <div className="section-shell grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2 space-y-4">
-            <div className="text-xl font-semibold text-slate-900">TrackMySpend</div>
-            <p className="text-slate-600">
-              Empowering your financial journey with user-friendly tools that
-              make everyday spending smarter and simpler.
+        <div className="section-shell flex flex-col gap-6 text-slate-700 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-3">
+            <div className="text-2xl font-semibold text-slate-900">TrackMySpend</div>
+            <p>
+              Smarter spending, clearer insights, and effortless control—all in one app.
             </p>
-            <div className="text-sm text-slate-500">
-              Copyright © {new Date().getFullYear()} All Rights Reserved.
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <span>© {new Date().getFullYear()} TrackMySpend</span>
+              <span className="hidden h-4 w-px bg-slate-300 md:inline-block" />
+              <a
+                className="text-brand-700 hover:text-brand-800"
+                href="mailto:info@trackmyspend.com"
+              >
+                info@trackmyspend.com
+              </a>
+              <span className="hidden h-4 w-px bg-slate-300 md:inline-block" />
+              <span>+1 (123) 456-789</span>
             </div>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold text-slate-900">Quick Links</h4>
-            <ul className="mt-3 space-y-2 text-slate-600">
-              {footerLinks.quick.map((link) => (
-                <li key={link} className="hover:text-brand-700">
-                  {link}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-slate-900">Support</h4>
-            <ul className="mt-3 space-y-2 text-slate-600">
-              {footerLinks.support.map((link) => (
-                <li key={link} className="hover:text-brand-700">
-                  {link}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="section-shell mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500">
-          <div className="space-x-4">
-            <span>Facebook</span>
-            <span>Twitter</span>
-            <span>Instagram</span>
-            <span>LinkedIn</span>
-          </div>
-          <div className="space-y-1 text-right text-slate-600">
-            <p>123 Innovation Street, Tech, USA</p>
-            <p>+1 (123) 456-789</p>
-            <p>info@trackmyspend.com</p>
+
+          <div className="flex flex-col items-start gap-3 md:items-end">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
+              Stay in sync
+            </div>
+            <p className="max-w-xs text-sm text-slate-600 text-left md:text-right">
+              Get product updates and budgeting tips—no spam, just what helps you spend smarter.
+            </p>
+            <a
+              href="https://play.google.com/store/apps/details?id=trackmyspend.budgetplanner.expensemanager"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center"
+            >
+              <Image
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcEodm368HNvTfg9m6RG8_yjYDnGggZ4Aeobh1It8-R5YO4yO9NCG53JVpprfSAq9U5h11ZPIJL2DEP3LNhfgV3Apf0JsnN1wYh9fm273AQ0HeRcvdJ3QxoH-HGtCvOfvLYIrDl1fLJFG6i-VEhLyihemctE0w3ewYmZ6mo7hnX_FAZvloE2qTcVUxK6oC/s320/Google_Play_Store_badge_EN.svg.png"
+                alt="Get it on Google Play"
+                width={180}
+                height={54}
+                className="h-12 w-auto"
+                priority
+              />
+            </a>
           </div>
         </div>
       </footer>

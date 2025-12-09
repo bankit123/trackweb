@@ -1,5 +1,1 @@
-# Placeholder app-ads.txt for TrackMySpend
-# Replace with your ad network lines, e.g.:
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
-
-
+google.com, pub-5051600298958624, DIRECT, f08c47fec0942fa0
