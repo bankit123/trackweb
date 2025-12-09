@@ -11,9 +11,8 @@ const assets = {
 };
 
 const highlights = [
-  { label: "App Rating", value: "4.8", suffix: "/5" },
+  { label: "User rating", value: "4.8", suffix: "/5" },
   { label: "Total downloads", value: "1.5m+", suffix: "" },
-  { label: "Avg. response", value: "24/7", suffix: " support" },
 ];
 
 const pillars = [
@@ -117,12 +116,22 @@ export default function Home() {
               with live insights.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:translate-y-[-2px]">
-                Download the app
-              </button>
-              <button className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-brand-700 transition hover:border-brand-200 hover:text-brand-800">
-                Need help? Tap support
-              </button>
+              <a
+                href="https://play.google.com/store/apps/details?id=trackmyspend.budgetplanner.expensemanager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:translate-y-[-2px]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                >
+                  <path d="M325.3 234.3 104.8 12.3c-5.9 4.3-9.7 11.1-9.7 18.9v449.8c0 7.8 3.8 14.6 9.7 18.9l220.5-222zM364.4 273.4l-44.6-44.6-32.7 32.7 32.7 32.7zM399.6 238.2l-26.1 15.2 26.1 15.2 56.6 32.9c5.3-4.7 8.8-11.5 8.8-19.2v-58.6c0-7.7-3.4-14.5-8.8-19.2zM122.7 9.8 343 230.1l32.8-32.8-239-138.9c-4.9-2.8-9.8-4.1-14.1-4.1zM343 281.9 122.7 502.2c4.3 0 9.2-1.3 14.1-4.1l239-138.9z" />
+                </svg>
+                Get it on Play Store
+              </a>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {highlights.map((item) => (
@@ -145,18 +154,16 @@ export default function Home() {
             </div>
           </div>
           <div className="relative flex-1">
-            <div className="glass-card relative overflow-hidden rounded-3xl bg-white shadow-soft">
+            <div className="relative overflow-hidden rounded-3xl shadow-soft">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(94,129,255,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.08),transparent_25%)]" />
-              <div className="relative rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
-                <Image
-                  src={assets.hero}
-                  alt="TrackMySpend hero"
-                  width={1100}
-                  height={700}
-                  className="h-auto w-full rounded-2xl border border-slate-200 object-cover"
-                  priority
-                />
-              </div>
+              <Image
+                src={assets.hero}
+                alt="TrackMySpend hero"
+                width={1100}
+                height={700}
+                className="relative h-auto w-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
