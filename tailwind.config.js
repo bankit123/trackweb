@@ -26,7 +26,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-gradient":
-          "radial-gradient(circle at 20% 20%, rgba(94, 129, 255, 0.35), transparent 35%), radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.1), transparent 25%), linear-gradient(120deg, #0b1224 0%, #0d1020 30%, #0f152f 100%)",
+          "radial-gradient(circle at 18% 20%, rgba(63, 99, 241, 0.18), transparent 32%), radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.12), transparent 28%), linear-gradient(120deg, #f8fbff 0%, #f3f6ff 35%, #eef3ff 100%)",
       },
     },
   },
