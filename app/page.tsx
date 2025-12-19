@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 const assets = {
   logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO3FzMvPTqFW1lJ4Z0A4nXdS6NP_H2bj3DgM4nwAN2PBY4QjTVihO1rmg-KhfqiOKWrM8afQ_2fo7qwc_0Y6Rj0M22Sig_Sc0TjVDsdzv52hKN_LFxYc5WK9M33039cJ8q7p9hBAKsMpDIjLhR0i1c1vsTf8Un-oZNAOlQ_TPzYaU8-Gm4Wjqf0bTYUs0U/s320/Logo.jpg",
@@ -75,6 +76,28 @@ const footerLinks = {
 };
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setEmail("");
+      setIsLoading(false);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+    }, 1000);
+  };
+
   return (
     <main className="min-h-screen bg-hero-gradient text-slate-900">
       <header className="relative overflow-hidden pb-12 md:pb-16">
@@ -268,6 +291,69 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="section-shell py-16 md:py-20">
+        <div className="glass-card rounded-3xl px-6 py-10 md:px-12 md:py-14">
+          {isSubmitted ? (
+            <div className="w-full rounded-2xl bg-green-50 border border-green-200 p-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-green-900">
+                    Successfully subscribed!
+                  </p>
+                  <p className="text-sm text-green-700">
+                    Thank you for joining our newsletter.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+              <div className="flex-1 max-w-xl">
+                <span className="accent-pill">Newsletter</span>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-900 md:text-4xl">
+                  Get smarter with money, every week
+                </h3>
+                <p className="mt-3 text-slate-600">
+                  Join our newsletter for budgeting tips, feature updates, and practical
+                  insights to help you spend better—straight to your inbox.
+                </p>
+              </div>
+
+              <div className="flex-1 max-w-md">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      placeholder="Enter your email address"
+                      className="flex-1 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="rounded-full bg-gradient-to-r from-brand-500 to-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    >
+                      {isLoading ? "Subscribing..." : "Subscribe"}
+                    </button>
+                  </div>
+                  <p className="text-xs text-slate-500 px-1">
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
