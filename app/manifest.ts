@@ -22,13 +22,11 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/images/SS1.webp',
         sizes: '1080x1920',
         type: 'image/webp',
-        label: 'TrackMySpend Dashboard',
       },
       {
         src: '/images/SS2.webp',
         sizes: '1080x1920',
         type: 'image/webp',
-        label: 'Expense Categories',
       },
     ],
   }
