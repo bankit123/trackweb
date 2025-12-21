@@ -20,9 +20,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "TrackMySpend | Expense Manager - Smart Expense Tracking & Budget Management App",
+  title: "TrackMySpend - Expense Manager App for Android",
   description:
-    "TrackMySpend is a powerful expense tracking and budget management mobile application. Track expenses, set budgets, and take control of your personal finances with our Expense Manager app. Download now for Android.",
+    "Free Expense Manager App - Track expenses, manage budgets & control finances. Download TrackMySpend budget tracker for Android. Smart expense tracking made easy.",
   keywords: [
     "expense tracker",
     "expense manager",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   creator: "TrackMySpend",
   publisher: "TrackMySpend",
   openGraph: {
-    title: "TrackMySpend | Expense Manager - Smart Expense Tracking App",
+    title: "TrackMySpend - Expense Manager App for Android",
     description: "TrackMySpend helps you monitor spending, stay on budget, and make smarter money moves with ease. Download the best expense tracking app for Android.",
     url: "https://trackmyspend.online",
     siteName: "TrackMySpend",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrackMySpend | Expense Manager - Smart Expense Tracking App",
+    title: "TrackMySpend - Expense Manager App for Android",
     description: "Track expenses, manage budgets, and take control of your finances with TrackMySpend Expense Manager.",
     images: ["https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO3FzMvPTqFW1lJ4Z0A4nXdS6NP_H2bj3DgM4nwAN2PBY4QjTVihO1rmg-KhfqiOKWrM8afQ_2fo7qwc_0Y6Rj0M22Sig_Sc0TjVDsdzv52hKN_LFxYc5WK9M33039cJ8q7p9hBAKsMpDIjLhR0i1c1vsTf8Un-oZNAOlQ_TPzYaU8-Gm4Wjqf0bTYUs0U/s320/Logo.jpg"],
   },
